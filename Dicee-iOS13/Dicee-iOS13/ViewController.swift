@@ -30,9 +30,6 @@ class ViewController: UIViewController {
         let leftDiceRandomNumber = Int.random(in: 0...5)
         let rightDiceRandomNumber = Int.random(in: 0...5)
         
-        print(Bool.random())
-        print(diceImages.randomElement() as Any)
-        
         diceImageViewOne.image = diceImages[leftDiceRandomNumber]
         diceImageViewTwo.image = diceImages[rightDiceRandomNumber]
     }
