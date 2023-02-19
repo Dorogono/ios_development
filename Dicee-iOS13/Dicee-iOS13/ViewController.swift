@@ -13,8 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var diceImageViewOne: UIImageView!
     @IBOutlet weak var diceImageViewTwo: UIImageView!
     
-    var leftDiceNumber = 1
-    var diceImages = [
+    let diceImages = [
         UIImage(imageLiteralResourceName: "DiceOne"),
         UIImage(imageLiteralResourceName: "DiceTwo"),
         UIImage(imageLiteralResourceName: "DiceThree"),
@@ -25,13 +24,17 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        diceImageViewOne.image = UIImage(imageLiteralResourceName: "DiceSix"
-//        )
     }
 
     @IBAction func rollButtonPressed(_ sender: UIButton) {
-        diceImageViewOne.image = diceImages[leftDiceNumber]
-        leftDiceNumber += 1
+        let leftDiceRandomNumber = Int.random(in: 0...5)
+        let rightDiceRandomNumber = Int.random(in: 0...5)
+        
+        print(Bool.random())
+        print(diceImages.randomElement() as Any)
+        
+        diceImageViewOne.image = diceImages[leftDiceRandomNumber]
+        diceImageViewTwo.image = diceImages[rightDiceRandomNumber]
     }
     
 }
